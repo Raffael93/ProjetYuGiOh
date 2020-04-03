@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIclient {
 
-    public static String base_url ="https://raw.githubusercontent.com/";
+    public static String base_url ="https://raw.githubusercontent.com/Raffael93/ProjetYuGiOh/master/app/src/main/java/com/example/projetyugioh/";
 
 
     public static Retrofit getClient(){

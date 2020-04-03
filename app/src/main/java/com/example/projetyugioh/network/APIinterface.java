@@ -10,6 +10,6 @@ import retrofit2.http.GET;
 public interface APIinterface {
 
 
-    @GET("overworked/yugioh-cards/master/output/cards.json")
+    @GET("api.json")
     Call<List<Cards>> getCards();
 }

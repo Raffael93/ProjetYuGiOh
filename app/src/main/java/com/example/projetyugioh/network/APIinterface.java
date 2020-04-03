@@ -1,6 +1,6 @@
 package com.example.projetyugioh.network;
 
-import com.example.projetyugioh.model.Animals;
+import com.example.projetyugioh.model.Cards;
 
 import java.util.List;
 
@@ -11,5 +11,5 @@ public interface APIinterface {
 
 
     @GET("api/v6/cardinfo.php")
-    Call<List<Animals>> getAnimals();
+    Call<List<Cards>> getAnimals();
 }

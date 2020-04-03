@@ -10,6 +10,6 @@ import retrofit2.http.GET;
 public interface APIinterface {
 
 
-    @GET("api/v6/cardinfo.php")
-    Call<List<Cards>> getAnimals();
+    @GET("overworked/yugioh-cards/master/output/cards.json")
+    Call<List<Cards>> getCards();
 }

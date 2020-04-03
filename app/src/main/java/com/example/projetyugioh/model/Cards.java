@@ -60,4 +60,8 @@ public class Cards {
     public String getLink() {
         return link;
     }
+
+    public String getImageURL() {
+        return link;
+    }
 }

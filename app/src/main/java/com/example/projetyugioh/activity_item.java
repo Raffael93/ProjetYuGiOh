@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+
 
 public class activity_item extends AppCompatActivity {
 
@@ -50,7 +50,7 @@ public class activity_item extends AppCompatActivity {
 
         //Image
         String image = intent.getStringExtra("image_url");
-        Glide.with(this).load(image).into(imageView);
+        //Glide.with(this).load(image).into(imageView);
 
 
 

@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIclient {
 
-    public static String base_url ="https://db.ygoprodeck.com/";
+    public static String base_url ="https://raw.githubusercontent.com/";
 
 
     public static Retrofit getClient(){

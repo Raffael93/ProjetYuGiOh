@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
+
 import com.example.projetyugioh.model.Cards;
 import com.example.projetyugioh.network.APIclient;
 
@@ -44,7 +44,7 @@ public class Activity4 extends AppCompatActivity {
         list = new ArrayList<>();
 
 
-        Call<List<Cards>> call = APIclient.apIinterface().getAnimals();
+        Call<List<Cards>> call = APIclient.apIinterface().getCards();
 
         call.enqueue(new Callback<List<Cards>>() {
             @Override
@@ -129,7 +129,7 @@ public class Activity4 extends AppCompatActivity {
 
             name.setText(list.get(position).getName());
 
-            Glide.with(context).load(list.get(position).getLink()).into(image_url_small);
+            //Glide.with(context).load(list.get(position).getLink()).into(image_url_small);
 
             return view;
         }

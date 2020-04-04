@@ -1,6 +1,6 @@
 [
   {
-    "url": "https://storage.googleapis.com/ygoprodeck.com/pics/27551.jpg",
+    "url": "https://storage.googleapis.com/ygoprodeck.com/pics/92450185.jpg",
     "id": 27551,
     "type": 131076,
     "atk": 0,
@@ -37,19 +37,6 @@
     "category": 263168,
     "name": "Gem-Enhancement",
     "desc": "Tribute 1 \"Gem-Knight\" monster, then target 1 \"Gem-Knight\" monster in your Graveyard; Special Summon that target from the Graveyard."
-  },
-  {
-    "url": "",
-    "id": 50755,
-    "type": 4,
-    "atk": 0,
-    "def": 0,
-    "level": 0,
-    "race": 0,
-    "attribute": 0,
-    "category": 262656,
-    "name": "Magician's Circle",
-    "desc": "When a Spellcaster-Type monster declares an attack: Each player Special Summons 1 Spellcaster-Type monster with 2000 or less ATK from their Deck in Attack Position."
   },
   {
     "url": "https://storage.googleapis.com/ygoprodeck.com/pics/62121.jpg",
@@ -141,19 +128,6 @@
     "category": 65538,
     "name": "Miracle Flipper",
     "desc": "If you control a \"Miracle Flipper\", you cannot Summon this card. Your opponent cannot select another face-up monster as an attack target. If this card is destroyed by battle, Special Summon it to your opponent's side of the field at the end of the Battle Phase. If this card is destroyed by the effect of a Spell or Trap Card, destroy 1 monster your opponent controls."
-  },
-  {
-    "url": "",
-    "id": 135598,
-    "type": 4129,
-    "atk": 100,
-    "def": 100,
-    "level": 1,
-    "race": 16384,
-    "attribute": 1,
-    "category": 1049088,
-    "name": "Key Mouse",
-    "desc": "When this card is destroyed by battle and sent to the Graveyard, you can add 1 Level 3 or lower Beast-Type monster from your deck to your hand."
   },
   {
     "url": "https://storage.googleapis.com/ygoprodeck.com/pics/135598.jpg",
@@ -256,7 +230,7 @@
     "race": 0,
     "attribute": 0,
     "category": 8192,
-    "name": "Ballista of Rampart Smashing",
+    "name": "Ballista Squad",
     "desc": "If the equipped monster attacks a face-down Defense Position monster, it gains 1500 ATK during damage calculation only."
   },
   {

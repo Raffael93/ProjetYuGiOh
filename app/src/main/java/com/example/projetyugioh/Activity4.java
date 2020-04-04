@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.example.projetyugioh.model.Cards;
 import com.example.projetyugioh.network.APIclient;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,7 @@ public class Activity4 extends AppCompatActivity {
 
     GridView gridView;
     CustomAdapter customAdapter;
-   // public static List<Cards> list;
+    public static List<Cards> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,7 @@ public class Activity4 extends AppCompatActivity {
         setContentView(R.layout.activity_4);
 
         gridView = findViewById(R.id.gridview);
-       // list = new ArrayList<>();
+        list = new ArrayList<>();
 
 
         Call<List<Cards>> call = APIclient.apIinterface().getCards();
@@ -53,12 +52,12 @@ public class Activity4 extends AppCompatActivity {
             public void onResponse(Call<List<Cards>> call, Response<List<Cards>> response) {
                 if(response.isSuccessful()){
 
-                   // list = response.body();
+                   list = response.body();
 
 
                     customAdapter = new CustomAdapter(response.body(), Activity4.this);
                     gridView.setAdapter(customAdapter);
-/*
+
                     gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -66,8 +65,8 @@ public class Activity4 extends AppCompatActivity {
                             Intent intent = new Intent();
 
                             startActivity(new Intent(getApplicationContext(),activity_item.class)
+                                    .putExtra("url",list.get(position).getUrl())
                                     .putExtra("name",list.get(position).getName())
-                                    .putExtra("url",list.get(position).getLink())
                                     .putExtra("desc",list.get(position).getDesc())
                                     .putExtra("type",list.get(position).getType())
                                     );
@@ -75,7 +74,7 @@ public class Activity4 extends AppCompatActivity {
                         }
                     });
 
-*/
+
                 }else{
                     Toast.makeText(getApplicationContext(),"An error : ",Toast.LENGTH_LONG).show();
 
@@ -125,10 +124,12 @@ public class Activity4 extends AppCompatActivity {
             TextView name  = view.findViewById(R.id.textView);
             ImageView image = view.findViewById(R.id.imageView);
 
+            Glide.with(context).load(list.get(position).getUrl()).into(image);
+
             name.setText(list.get(position).getName());
 
 
-            Glide.with(context).load(list.get(position).getLink()).into(image);
+
 
 
 

@@ -4,7 +4,7 @@ public class Cards {
 
     public int id;
     public String name;
-    public String link;
+    public String url;
     public String desc;
     public String type;
 
@@ -16,8 +16,8 @@ public class Cards {
         return name;
     }
 
-    public String getLink() {
-        return link;
+    public String getUrl() {
+        return url;
     }
 
     public String getDesc() {

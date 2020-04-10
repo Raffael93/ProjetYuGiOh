@@ -21,7 +21,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter  extends  RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
 
-    private static final String TAG = "RecyclerViewAdapter";
+
     private ArrayList<String> mImageNames = new ArrayList<>();
     private ArrayList<String> mImages = new ArrayList<>();
     private Context context;
@@ -41,7 +41,7 @@ public class RecyclerViewAdapter  extends  RecyclerView.Adapter<RecyclerViewAdap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        Log.d(TAG,"OnBindViewHolder : called");
+       
 
         Glide.with(context).asBitmap().load(mImages.get(position)).into(holder.imageCircle);
         holder.imageName.setText(mImageNames.get(position));

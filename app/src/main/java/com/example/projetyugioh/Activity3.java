@@ -1,36 +1,70 @@
 package com.example.projetyugioh;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
+import com.example.projetyugioh.model.RecyclerViewAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Activity3 extends AppCompatActivity {
 
-    private Button retourMenu;
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mImagesUrls = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3);
 
-        retourMenu = findViewById(R.id.retourMenu);
 
-        retourMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                previous();
-            }
-        });
-
+        initImage();
 
 
     }
 
-    public void previous(){
-        Intent intent3 = new Intent(this, MainActivity.class);
-        startActivity(intent3);
+    private void initImage(){
+
+        mNames.add("Armageddon Knight");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/28985331.jpg");
+
+        mNames.add("Daigusto Emeral");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/581014.jpg");
+
+        mNames.add("Dark Grepher");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/14536035.jpg");
+
+        mNames.add("Eclipse Wyvern");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/51858306.jpg");
+
+        mNames.add("Elder Entity Norden");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/17412721.jpg");
+
+        mNames.add("Infernity Archfiend");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/99177923.jpg");
+
+        mNames.add("Nekroz of Unicore");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/89463537.jpg");
+
+        mNames.add("Dimension of Chaos");
+        mImagesUrls.add("https://storage.googleapis.com/ygoprodeck.com/pics/7563579.jpg");
+
+        initRecyclerView();
+
     }
+
+    private void initRecyclerView(){
+
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mNames,mImagesUrls,this);
+        recyclerView.setAdapter(recyclerViewAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+    }
+
+
 }

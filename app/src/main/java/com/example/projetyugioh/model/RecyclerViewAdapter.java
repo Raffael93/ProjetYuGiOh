@@ -1,10 +1,12 @@
 package com.example.projetyugioh.model;
 
 import android.content.Context;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,9 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter  extends  RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+
+
+
 
 
     private ArrayList<String> mImageNames = new ArrayList<>();
@@ -66,11 +71,49 @@ public class RecyclerViewAdapter  extends  RecyclerView.Adapter<RecyclerViewAdap
         private TextView imageName;
         private RelativeLayout parentLayout;
 
+
         public ViewHolder(View itemView) {
             super(itemView);
             imageCircle = itemView.findViewById(R.id.imageCircle);
             imageName = itemView.findViewById(R.id.image_name);
             parentLayout = itemView.findViewById(R.id.parent_layout);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }

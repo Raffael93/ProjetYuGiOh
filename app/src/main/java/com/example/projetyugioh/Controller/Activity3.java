@@ -25,6 +25,20 @@ public class Activity3 extends AppCompatActivity {
 
         initImage();
 
+        setButtons();
+
+
+    }
+
+    private void setButtons() {
+
+
+    }
+
+    public void removeItem(int position){
+        mNames.remove(position);
+        mImagesUrls.remove(position);
+
 
     }
 
@@ -64,6 +78,8 @@ public class Activity3 extends AppCompatActivity {
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(mNames,mImagesUrls,this);
         recyclerView.setAdapter(recyclerViewAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
 
     }
 

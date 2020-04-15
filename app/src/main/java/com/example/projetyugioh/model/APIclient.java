@@ -1,4 +1,4 @@
-package com.example.projetyugioh.network;
+package com.example.projetyugioh.model;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -10,6 +10,8 @@ public class APIclient {
 
     public static Retrofit getClient(){
         Retrofit retrofit = new Retrofit.Builder().baseUrl(base_url).addConverterFactory(GsonConverterFactory.create()).build();
+
+
 
         return retrofit;
     }

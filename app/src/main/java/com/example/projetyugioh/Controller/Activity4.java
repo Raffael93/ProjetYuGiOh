@@ -1,8 +1,10 @@
-package com.example.projetyugioh;
+package com.example.projetyugioh.Controller;
 
 
 import android.content.Context;
 import android.content.Intent;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,10 +21,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.bumptech.glide.Glide;
+import com.example.projetyugioh.R;
 import com.example.projetyugioh.model.Cards;
-import com.example.projetyugioh.network.APIclient;
+import com.example.projetyugioh.model.APIclient;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-import java.util.ArrayList;
+import java.lang.reflect.Type;
 import java.util.List;
 
 import retrofit2.Call;
@@ -36,33 +41,41 @@ public class Activity4 extends AppCompatActivity {
     CustomAdapter customAdapter;
     public static List<Cards> list;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
 
+
         gridView = findViewById(R.id.gridview);
-        list = new ArrayList<>();
 
 
         Call<List<Cards>> call = APIclient.apIinterface().getCards();
+
+        saveData();
+        loadData();
+        //showList(list);
 
         call.enqueue(new Callback<List<Cards>>() {
             @Override
             public void onResponse(Call<List<Cards>> call, Response<List<Cards>> response) {
                 if(response.isSuccessful()){
 
-                   list = response.body();
-
 
                     customAdapter = new CustomAdapter(response.body(), Activity4.this);
                     gridView.setAdapter(customAdapter);
 
+
+
+                    list = response.body();
+                    //new activity
                     gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            Intent intent = new Intent();
+                            //Intent intent = new Intent();
 
                             startActivity(new Intent(getApplicationContext(),activity_item.class)
                                     .putExtra("url",list.get(position).getUrl())
@@ -87,6 +100,48 @@ public class Activity4 extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"An error : "+ t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
             }
         });
+
+
+    }
+
+
+
+
+    public  void saveData(){
+
+      SharedPreferences sharedPreferences = getSharedPreferences("SharedPreferences",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        Gson gson = new Gson();
+
+        String json = gson.toJson(list);
+        editor.putString("list",json);
+        editor.apply();
+
+        Toast.makeText(getApplicationContext(),"List saved",Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void loadData(){
+        SharedPreferences sharedPreferences = getSharedPreferences("SharedPreferences",MODE_PRIVATE);
+
+        Gson gson = new Gson();
+        String json = sharedPreferences.getString("list",null);
+
+        Type type = new TypeToken<List<Cards>>(){}.getType();
+        list = gson.fromJson(json,type);
+
+
+        Toast.makeText(getApplicationContext(),"List loaded",Toast.LENGTH_SHORT).show();
+        if(list != null){
+            showList(list);
+        }
+
+
+    }
+
+    private void showList(List<Cards> cardsList){
+        gridView = findViewById(R.id.gridview);
 
 
     }
@@ -119,6 +174,7 @@ public class Activity4 extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
 
+
             View view = LayoutInflater.from(context).inflate(R.layout.row_data,null);
 
             TextView name  = view.findViewById(R.id.textView);
@@ -127,12 +183,6 @@ public class Activity4 extends AppCompatActivity {
             Glide.with(context).load(list.get(position).getUrl()).into(image);
 
             name.setText(list.get(position).getName());
-
-
-
-
-
-
 
             return view;
         }

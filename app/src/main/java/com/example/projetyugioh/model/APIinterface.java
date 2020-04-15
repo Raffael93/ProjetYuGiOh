@@ -1,4 +1,4 @@
-package com.example.projetyugioh.network;
+package com.example.projetyugioh.model;
 
 import com.example.projetyugioh.model.Cards;
 

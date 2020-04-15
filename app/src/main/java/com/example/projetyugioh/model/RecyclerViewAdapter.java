@@ -41,7 +41,7 @@ public class RecyclerViewAdapter  extends  RecyclerView.Adapter<RecyclerViewAdap
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-       
+
 
         Glide.with(context).asBitmap().load(mImages.get(position)).into(holder.imageCircle);
         holder.imageName.setText(mImageNames.get(position));

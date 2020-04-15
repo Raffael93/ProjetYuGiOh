@@ -1,4 +1,4 @@
-package com.example.projetyugioh;
+package com.example.projetyugioh.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.projetyugioh.R;
 import com.example.projetyugioh.model.RecyclerViewAdapter;
 
 import java.util.ArrayList;

@@ -12,17 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Controller.activity_item"></activity>
-        <activity android:name=".Controller.Activity4" />
-        <activity android:name=".Controller.Activity3" />
-        <activity android:name=".Controller.Activity2" />
-        <activity android:name=".Controller.MainActivity">
+        <activity android:name=".Controller.Menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Controller.activity_item" />
+        <activity android:name=".Controller.Activity4" />
+        <activity android:name=".Controller.Activity3" />
+        <activity android:name=".Controller.Activity2" />
+        <activity android:name=".Controller.MainActivity"></activity>
     </application>
 
 </manifest>

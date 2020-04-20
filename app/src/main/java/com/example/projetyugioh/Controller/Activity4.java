@@ -25,6 +25,7 @@ import com.example.projetyugioh.R;
 import com.example.projetyugioh.model.Cards;
 import com.example.projetyugioh.model.APIclient;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -33,6 +34,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 
 public class Activity4 extends AppCompatActivity {
@@ -51,18 +53,29 @@ public class Activity4 extends AppCompatActivity {
 
         gridView = findViewById(R.id.gridview);
 
+        List<Cards> listCards = loadData();
+
+        if(listCards != null){
+            showList(listCards);
+
+        }else{
+            apiCall();
+        }
+
+
+    }
+
+    private void apiCall(){
+
+
 
         Call<List<Cards>> call = APIclient.apIinterface().getCards();
-
-        saveData();
-        loadData();
-        //showList(list);
 
         call.enqueue(new Callback<List<Cards>>() {
             @Override
             public void onResponse(Call<List<Cards>> call, Response<List<Cards>> response) {
                 if(response.isSuccessful()){
-
+                    saveData();
 
                     customAdapter = new CustomAdapter(response.body(), Activity4.this);
                     gridView.setAdapter(customAdapter);
@@ -75,14 +88,14 @@ public class Activity4 extends AppCompatActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                            //Intent intent = new Intent();
+
 
                             startActivity(new Intent(getApplicationContext(),activity_item.class)
                                     .putExtra("url",list.get(position).getUrl())
                                     .putExtra("name",list.get(position).getName())
                                     .putExtra("desc",list.get(position).getDesc())
                                     .putExtra("type",list.get(position).getType())
-                                    );
+                            );
 
                         }
                     });
@@ -100,11 +113,7 @@ public class Activity4 extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"An error : "+ t.getLocalizedMessage(),Toast.LENGTH_LONG).show();
             }
         });
-
-
     }
-
-
 
 
     public  void saveData(){
@@ -122,7 +131,7 @@ public class Activity4 extends AppCompatActivity {
 
     }
 
-    public void loadData(){
+    public List<Cards> loadData(){
         SharedPreferences sharedPreferences = getSharedPreferences("SharedPreferences",MODE_PRIVATE);
 
         Gson gson = new Gson();
@@ -133,17 +142,16 @@ public class Activity4 extends AppCompatActivity {
 
 
         Toast.makeText(getApplicationContext(),"List loaded",Toast.LENGTH_SHORT).show();
-        if(list != null){
-            showList(list);
-        }
 
+
+    return list;
 
     }
 
     private void showList(List<Cards> cardsList){
         gridView = findViewById(R.id.gridview);
-
-
+        customAdapter = new CustomAdapter(cardsList, Activity4.this);
+        gridView.setAdapter(customAdapter);
     }
 
     public class CustomAdapter extends BaseAdapter{

@@ -52,6 +52,21 @@ public class Activity4 extends AppCompatActivity {
 
 
         gridView = findViewById(R.id.gridview);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+                startActivity(new Intent(getApplicationContext(),activity_item.class)
+                        .putExtra("url",list.get(position).getUrl())
+                        .putExtra("name",list.get(position).getName())
+                        .putExtra("desc",list.get(position).getDesc())
+                        .putExtra("type",list.get(position).getType())
+                );
+
+            }
+        });
 
         List<Cards> listCards = loadData();
 

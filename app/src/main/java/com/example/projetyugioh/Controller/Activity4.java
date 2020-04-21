@@ -127,7 +127,7 @@ public class Activity4 extends AppCompatActivity {
         editor.putString("list",json);
         editor.apply();
 
-        Toast.makeText(getApplicationContext(),"List saved",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(),"List saved",Toast.LENGTH_SHORT).show();
 
     }
 
@@ -141,7 +141,7 @@ public class Activity4 extends AppCompatActivity {
         list = gson.fromJson(json,type);
 
 
-        Toast.makeText(getApplicationContext(),"List loaded",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),"List loaded",Toast.LENGTH_SHORT).show();
 
 
     return list;

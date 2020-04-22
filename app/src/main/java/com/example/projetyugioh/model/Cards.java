@@ -2,13 +2,13 @@ package com.example.projetyugioh.Model;
 
 public class Cards {
 
-    public int id;
-    public String name;
-    public String url;
-    public String desc;
-    public String type;
-    public String atk;
-    public String def;
+    private int id;
+    private String name;
+    private String url;
+    private String desc;
+    private String type;
+    private String atk;
+    private String def;
 
     public String getAtk() {
         return atk;

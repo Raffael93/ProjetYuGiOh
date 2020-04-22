@@ -2,6 +2,9 @@ package com.example.projetyugioh.Controller;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openCard();
+                pushNotificationOnClick();
             }
         });
 
@@ -44,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+    public void pushNotificationOnClick(){
+
+        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        Notification notify = new Notification.Builder(getApplicationContext()).setContentTitle("Notification").setContentText("Clicked").setSmallIcon(R.drawable.ic_launcher_foreground).build();
+        notify.flags |= Notification.FLAG_AUTO_CANCEL;
+        notificationManager.notify(0,notify);
     }
 
     public void openCard(){

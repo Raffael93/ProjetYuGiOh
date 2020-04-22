@@ -1,10 +1,13 @@
 package com.example.projetyugioh.Controller;
 
 
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -37,8 +41,8 @@ import retrofit2.Response;
 
 public class AllCards extends AppCompatActivity {
 
-    GridView gridView;
-    CustomAdapter customAdapter;
+    private GridView gridView;
+    private CustomAdapter customAdapter;
     public static List<Cards> list;
 
 
@@ -53,6 +57,7 @@ public class AllCards extends AppCompatActivity {
         onClick();
 
 
+
         List<Cards> listCards = loadData();
 
         if(listCards != null){
@@ -64,6 +69,9 @@ public class AllCards extends AppCompatActivity {
 
 
     }
+
+
+
 
     private void apiCall(){
 
@@ -101,8 +109,10 @@ public class AllCards extends AppCompatActivity {
     }
 
 
+
     private void onClick(){
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -115,10 +125,14 @@ public class AllCards extends AppCompatActivity {
                         .putExtra("type",list.get(position).getType())
                         .putExtra("atk",list.get(position).getAtk())
                         .putExtra("def",list.get(position).getDef())
+
+
                 );
+
 
             }
         });
+
     }
 
     public  void saveData(){

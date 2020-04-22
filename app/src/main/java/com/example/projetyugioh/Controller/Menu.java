@@ -14,6 +14,7 @@ import com.example.projetyugioh.R;
 public class Menu extends AppCompatActivity {
 
     private VideoView videoView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

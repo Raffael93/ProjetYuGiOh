@@ -22,10 +22,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.projetyugioh.R;
-import com.example.projetyugioh.model.Cards;
-import com.example.projetyugioh.model.APIclient;
+import com.example.projetyugioh.Model.Cards;
+import com.example.projetyugioh.Model.APIclient;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
@@ -34,7 +33,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 
 public class Activity4 extends AppCompatActivity {
@@ -63,6 +61,8 @@ public class Activity4 extends AppCompatActivity {
                         .putExtra("name",list.get(position).getName())
                         .putExtra("desc",list.get(position).getDesc())
                         .putExtra("type",list.get(position).getType())
+                        .putExtra("atk",list.get(position).getAtk())
+                        .putExtra("def",list.get(position).getDef())
                 );
 
             }

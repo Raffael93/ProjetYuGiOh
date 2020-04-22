@@ -1,6 +1,4 @@
-package com.example.projetyugioh.model;
-
-import com.example.projetyugioh.model.Cards;
+package com.example.projetyugioh.Model;
 
 import java.util.List;
 

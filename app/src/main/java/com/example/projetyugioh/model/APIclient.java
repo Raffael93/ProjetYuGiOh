@@ -1,4 +1,4 @@
-package com.example.projetyugioh.model;
+package com.example.projetyugioh.Model;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

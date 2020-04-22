@@ -1,4 +1,4 @@
-package com.example.projetyugioh.model;
+package com.example.projetyugioh.Model;
 
 public class Cards {
 
@@ -7,6 +7,16 @@ public class Cards {
     public String url;
     public String desc;
     public String type;
+    public String atk;
+    public String def;
+
+    public String getAtk() {
+        return atk;
+    }
+
+    public String getDef() {
+        return def;
+    }
 
     public int getId() {
         return id;

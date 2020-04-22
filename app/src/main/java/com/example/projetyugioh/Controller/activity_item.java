@@ -13,11 +13,13 @@ import com.example.projetyugioh.R;
 
 public class activity_item extends AppCompatActivity {
 
-    TextView textView;
-    TextView descView;
-    TextView raceView;
-    TextView typeView;
-    ImageView imageView;
+    private TextView textView;
+    private TextView descView;
+    private TextView raceView;
+    private TextView typeView;
+    private ImageView imageView;
+    private TextView atkView;
+    private TextView defView;
 
 
 
@@ -32,21 +34,26 @@ public class activity_item extends AppCompatActivity {
         imageView = findViewById(R.id.image);
         raceView = findViewById(R.id.race);
         typeView = findViewById(R.id.type);
+        atkView = findViewById(R.id.atk);
+        defView = findViewById(R.id.def);
 
-
-        Intent intent =getIntent();
+        Intent intent = getIntent();
 
         //Beginning
         String name = intent.getStringExtra("name");
         String desc = intent.getStringExtra("desc");
         String race = intent.getStringExtra("race");
         String type = intent.getStringExtra("type");
+        String atk = intent.getStringExtra("atk");
+        String def = intent.getStringExtra("def");
 
         //Set data
         textView.setText("Name : "+name);
         descView.setText("Description : "+ desc);
         raceView.setText("Race : "+race);
         typeView.setText("Type :"+type);
+        atkView.setText("Atk : "+atk);
+        defView.setText("Def : "+def);
 
 
 

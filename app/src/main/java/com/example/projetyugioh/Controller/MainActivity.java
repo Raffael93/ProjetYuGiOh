@@ -47,17 +47,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openCard(){
-        Intent intent3 = new Intent(this, Activity4.class);
+        Intent intent3 = new Intent(this, AllCards.class);
         startActivity(intent3);
     }
 
     public void openRule(){
-        Intent intent = new Intent(this, Activity2.class);
+        Intent intent = new Intent(this, Rule.class);
         startActivity(intent);
     }
 
     public void openBanlist(){
-        Intent intent2 = new Intent(this, Activity3.class);
+        Intent intent2 = new Intent(this, Banlist.class);
         startActivity(intent2);
 
     }

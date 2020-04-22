@@ -35,7 +35,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Activity4 extends AppCompatActivity {
+public class AllCards extends AppCompatActivity {
 
     GridView gridView;
     CustomAdapter customAdapter;
@@ -50,23 +50,8 @@ public class Activity4 extends AppCompatActivity {
 
 
         gridView = findViewById(R.id.gridview);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        onClick();
 
-
-
-                startActivity(new Intent(getApplicationContext(),activity_item.class)
-                        .putExtra("url",list.get(position).getUrl())
-                        .putExtra("name",list.get(position).getName())
-                        .putExtra("desc",list.get(position).getDesc())
-                        .putExtra("type",list.get(position).getType())
-                        .putExtra("atk",list.get(position).getAtk())
-                        .putExtra("def",list.get(position).getDef())
-                );
-
-            }
-        });
 
         List<Cards> listCards = loadData();
 
@@ -92,28 +77,13 @@ public class Activity4 extends AppCompatActivity {
                 if(response.isSuccessful()){
                     saveData();
 
-                    customAdapter = new CustomAdapter(response.body(), Activity4.this);
+                    customAdapter = new CustomAdapter(response.body(), AllCards.this);
                     gridView.setAdapter(customAdapter);
 
 
 
                     list = response.body();
-                    //new activity
-                    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
-
-                            startActivity(new Intent(getApplicationContext(),activity_item.class)
-                                    .putExtra("url",list.get(position).getUrl())
-                                    .putExtra("name",list.get(position).getName())
-                                    .putExtra("desc",list.get(position).getDesc())
-                                    .putExtra("type",list.get(position).getType())
-                            );
-
-                        }
-                    });
 
 
                 }else{
@@ -130,6 +100,26 @@ public class Activity4 extends AppCompatActivity {
         });
     }
 
+
+    private void onClick(){
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+
+                startActivity(new Intent(getApplicationContext(),activity_item.class)
+                        .putExtra("url",list.get(position).getUrl())
+                        .putExtra("name",list.get(position).getName())
+                        .putExtra("desc",list.get(position).getDesc())
+                        .putExtra("type",list.get(position).getType())
+                        .putExtra("atk",list.get(position).getAtk())
+                        .putExtra("def",list.get(position).getDef())
+                );
+
+            }
+        });
+    }
 
     public  void saveData(){
 
@@ -165,7 +155,7 @@ public class Activity4 extends AppCompatActivity {
 
     private void showList(List<Cards> cardsList){
         gridView = findViewById(R.id.gridview);
-        customAdapter = new CustomAdapter(cardsList, Activity4.this);
+        customAdapter = new CustomAdapter(cardsList, AllCards.this);
         gridView.setAdapter(customAdapter);
     }
 

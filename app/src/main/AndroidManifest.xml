@@ -20,9 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Controller.activity_item" />
-        <activity android:name=".Controller.Activity4" />
-        <activity android:name=".Controller.Activity3" />
-        <activity android:name=".Controller.Activity2" />
+        <activity android:name=".Controller.AllCards" />
+        <activity android:name=".Controller.Banlist" />
+        <activity android:name=".Controller.Rule" />
         <activity android:name=".Controller.MainActivity"></activity>
     </application>
 

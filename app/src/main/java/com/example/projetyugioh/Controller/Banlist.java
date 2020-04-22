@@ -11,7 +11,7 @@ import com.example.projetyugioh.Model.RecyclerViewAdapter;
 
 import java.util.ArrayList;
 
-public class Activity3 extends AppCompatActivity {
+public class Banlist extends AppCompatActivity {
 
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImagesUrls = new ArrayList<>();

@@ -10,7 +10,7 @@ import android.widget.Button;
 import com.example.projetyugioh.R;
 import com.github.barteksc.pdfviewer.PDFView;
 
-public class Activity2 extends AppCompatActivity {
+public class Rule extends AppCompatActivity {
 
     private Button buttonRetour;
     private PDFView pdfview;

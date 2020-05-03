@@ -9,6 +9,7 @@ Elle utilise l'API de Github permettant d'aller chercher les informations néces
 - Installation d'Android Studio
 - Si vous utiliser git via un terminal pour récupérer le projet :
     - Pull la branche Master ( git pull origin master )
+    
     Ou bien :
     - git clone https://github.com/Raffael93/ProjetYuGiOh.git
 

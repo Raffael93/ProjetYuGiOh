@@ -8,10 +8,12 @@ Elle utilise l'API de Github permettant d'aller chercher les informations néces
 ## Prérequis
 - Installation d'Android Studio
 - Pull la branche Master ( git pull origin master )
+- git clone https://github.com/Raffael93/ProjetYuGiOh.git
 
 ## Consignes respectées
 - Architecture MVC
-- Appels d'une API Rest 
+- Appels d'une API Rest
+- Sauvegarde de donnée en cache
 - 5 écrans : 5 activités
 - Affichage d'une liste dans un RecyclerView
 - Affichage du détail d'un item de la liste
@@ -30,6 +32,7 @@ Si vous voulez voir la vidéo en entière, voici le lien :
 https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/video.mp4
 
 ### Ecran home
+Menu permettant de lier les règles, la banlist et les cartes avec 3 bouttons
 ![Menu](https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/main.PNG)
 
 ### Ecran règles

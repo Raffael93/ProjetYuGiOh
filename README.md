@@ -24,6 +24,7 @@ Elle utilise l'API de Github permettant d'aller chercher les informations néces
 
 ### Premier écran
 ![Vidéo de démarrage](https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/d%C3%A9but.PNG)
+
 Si vous voulez voir la vidéo en entière, voici le lien : 
 https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/video.mp4
 

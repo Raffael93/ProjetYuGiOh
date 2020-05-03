@@ -23,7 +23,9 @@ Elle utilise l'API de Github permettant d'aller chercher les informations néces
 ## Fonctionnalités 
 
 ### Premier écran
-![Vidéo de démarrage]()
+![Vidéo de démarrage](https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/d%C3%A9but.PNG)
+Si vous voulez voir la vidéo en entière, voici le lien : 
+https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/video.mp4
 
 ### Ecran home
 ![Menu](https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/main.PNG)
@@ -35,7 +37,7 @@ Elle utilise l'API de Github permettant d'aller chercher les informations néces
 ### Ecran banlist
 - Affiche les noms des cartes qui sont ban
 
-![Menu](https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/banlist.PNG)
+![banlist](https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/banlist.PNG)
 
 ### Ecran cartes jouables
 - Affiche les noms des cartes qui sont jouables

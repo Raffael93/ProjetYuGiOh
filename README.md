@@ -7,8 +7,10 @@ Elle utilise l'API de Github permettant d'aller chercher les informations néces
 
 ## Prérequis
 - Installation d'Android Studio
-- Pull la branche Master ( git pull origin master )
-- git clone https://github.com/Raffael93/ProjetYuGiOh.git
+- Si vous utiliser git via un terminal pour récupérer le projet :
+    - Pull la branche Master ( git pull origin master )
+    Ou bien :
+    - git clone https://github.com/Raffael93/ProjetYuGiOh.git
 
 ## Consignes respectées
 - Architecture MVC

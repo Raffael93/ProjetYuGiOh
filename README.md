@@ -33,6 +33,7 @@ https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/video.mp4
 
 ### Ecran home
 Menu permettant de lier les règles, la banlist et les cartes avec 3 bouttons
+
 ![Menu](https://github.com/Raffael93/ProjetYuGiOh/blob/master/image/main.PNG)
 
 ### Ecran règles

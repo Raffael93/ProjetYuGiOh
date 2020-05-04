@@ -17,7 +17,7 @@ Elle utilise l'API de Github permettant d'aller chercher les informations néces
 - Architecture MVC
 - Appels d'une API Rest
 - Sauvegarde de donnée en cache
-- 5 écrans : 5 activités
+- 6 écrans : 6 activités
 - Affichage d'une liste dans un RecyclerView
 - Affichage du détail d'un item de la liste
 - Fonctions supplémentaires ajoutés par moi-même :
